@@ -27,6 +27,7 @@ module.exports = (db, updateAppointment) => {
   });
 
   router.put("/appointments/:id", (request, response) => {
+   console.log(process.env.TEST_ERROR, typeof process.env.TEST_ERROR)
     if (process.env.TEST_ERROR) {
       setTimeout(() => response.status(500).json({}), 1000);
       return;
